@@ -39,6 +39,10 @@ import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 import type {LayoutData} from '../root';
 import {MobileNav} from './MobileNav';
+import {DropdownMenu} from './DropdownMenu';
+import {RxCross2} from 'react-icons/rx';
+import product_image from '../assets/products/a1.jpg';
+import {RightContactIcons} from './RightContactIcons';
 
 export function Layout({
   children,
@@ -59,6 +63,7 @@ export function Layout({
           title={layout?.shop.name ?? 'Hydrogen'}
           menu={layout?.headerMenu}
         />
+        <RightContactIcons />
         <main role="main" id="mainContent" className="flex-grow">
           {children}
         </main>
@@ -258,24 +263,24 @@ function MobileHeader({
 }
 
 const topMenuList = [
-  'LA NOSTRA ESSENZA',
-  'RICARICA DI BENESSERE',
-  'INNOVAZIONI E TECNOLOGIE',
-  'SOSTENIBILITÀ',
-  'DORMI A 5 STELLE',
-  'CERTIFICAZIONI',
-  'NEWS',
-  'BLOG',
-  'CONTATTI',
+  'la nostra essenza',
+  'ricarica di benessere',
+  'innovazioni e tecnologie',
+  'sostenibilità',
+  'dormi a 5 stelle',
+  'certificazioni',
+  'news',
+  'blog',
+  'contatti',
 ];
 const mainMenuList = [
-  'MATERASSI',
-  'LETTI E RETI',
-  'TOPPER',
-  'GUANCIALI',
-  'ACCESSORI',
-  'PROMO',
-  'OUTLET',
+  'materassi',
+  'letti e reti',
+  'topper',
+  'guanciali',
+  'accessori',
+  'promo',
+  'outlet',
 ];
 
 function DesktopHeaderNew() {
@@ -299,10 +304,36 @@ function DesktopHeaderNew() {
           <div className="hidden menu-list xl:block grow self-center justify-self-end">
             {mainMenuList.map((menuItem, index) => (
               <span
-                className="text-xxs text-dark-blue mx-4 cursor-pointer hover:opacity-70"
+                className="text-xxs text-dark-blue mx-4 cursor-pointer"
                 key={index}
               >
-                {menuItem}
+                <DropdownMenu menuTitle={menuItem}>
+                  <div className="pt-2 pb-20">
+                    <div className="flex justify-end items-center">
+                      <RxCross2 className="w-5 h-5 text-dark-blue" />
+                    </div>
+                    <div className="w-full py-4 px-12">
+                      <h5 className="hidden lg:flex mb-2 text-dark-blue lg:justify-between lg:items-center">
+                        <span className="text-xl capitalize">{menuItem}</span>
+                        <span className="text-gold font-semibold text-xxs">
+                          TUTTI I MODELLI
+                        </span>
+                      </h5>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="product-item py-3 px-5">
+                          <img
+                            src={product_image}
+                            alt="Product image"
+                            className="w-full"
+                          />
+                          <p className="text-dark-blue mt-4 mb-3 text-xxs uppercase">
+                            GUANCIALIE
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </DropdownMenu>
               </span>
             ))}
           </div>

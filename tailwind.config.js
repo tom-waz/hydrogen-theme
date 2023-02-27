@@ -89,6 +89,7 @@ module.exports = {
         'prose-wide': '80ch',
         'footer-logo': '260px',
         110: '110px',
+        'menu-width': '1060px',
       },
       maxHeight: {
         banner: '770px',

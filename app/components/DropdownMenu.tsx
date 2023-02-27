@@ -9,7 +9,7 @@ type Props = {
 export function DropdownMenu({menuTitle, children}: Props) {
   return (
     <Menu as={Fragment}>
-      <Menu.Button>{menuTitle}</Menu.Button>
+      <Menu.Button className="uppercase">{menuTitle}</Menu.Button>
       <Transition
         as={Fragment}
         enter="transition ease-out duration-350"
@@ -19,7 +19,7 @@ export function DropdownMenu({menuTitle, children}: Props) {
         leaveFrom="transform opacity-100 h-screen"
         leaveTo="transform opacity-0 h-0"
       >
-        <Menu.Items className="fixed left-0 top-narrow-sticky xl:top-wide-sticky w-screen h-screen-no-nav-mobile xl:h-screen-no-nav-desktop bg-white pt-5 pb-10">
+        <Menu.Items className="fixed right-0 top-narrow-sticky xl:top-wide-sticky w-screen h-screen-no-nav-mobile xl:h-screen-no-nav-desktop bg-white pt-5 pb-10 max-w-menu-width">
           {children}
         </Menu.Items>
       </Transition>
