@@ -52,9 +52,9 @@ module.exports = {
       },
       height: {
         screen: 'var(--screen-height, 100vh)',
-        'screen-no-nav':
-          'calc(var(--screen-height, 100vh) - var(--height-nav))',
         'screen-dynamic': 'var(--screen-height-dynamic, 100vh)',
+        'screen-no-nav-mobile': 'calc(100vh - 65px)',
+        'screen-no-nav-desktop': 'calc(100vh - 112px)',
         banner: 'calc(100vh - 150px)',
       },
       width: {
@@ -88,6 +88,7 @@ module.exports = {
         'prose-narrow': '45ch',
         'prose-wide': '80ch',
         'footer-logo': '260px',
+        110: '110px',
       },
       maxHeight: {
         banner: '770px',

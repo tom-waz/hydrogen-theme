@@ -19,7 +19,9 @@ export function DropdownMenu({menuTitle, children}: Props) {
         leaveFrom="transform opacity-100 h-screen"
         leaveTo="transform opacity-0 h-0"
       >
-        {children}
+        <Menu.Items className="fixed left-0 top-narrow-sticky xl:top-wide-sticky w-screen h-screen-no-nav-mobile xl:h-screen-no-nav-desktop bg-white pt-5 pb-10">
+          {children}
+        </Menu.Items>
       </Transition>
     </Menu>
   );

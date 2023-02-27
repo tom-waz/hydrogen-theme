@@ -30,7 +30,6 @@ import {MdOutlineLocationOn} from 'react-icons/md';
 import {IoIosSearch} from 'react-icons/io';
 import {RiUserLine} from 'react-icons/ri';
 import {BsCart, BsChevronRight} from 'react-icons/bs';
-import {RxHamburgerMenu} from 'react-icons/rx';
 import {Suspense, useEffect, useMemo} from 'react';
 
 import Logo_Img from '../assets/dark_logo.png';
