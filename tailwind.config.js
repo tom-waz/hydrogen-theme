@@ -29,6 +29,11 @@ module.exports = {
         gold: '#B09987',
         'light-gray': '#e4e8e9',
         'white-hover': '#cbb29e',
+        'border': '#dee2e6',
+        '5799B9': '#5799B9',
+        '174860': '#174860',
+        'D09467': '#D09467',
+        'B09987': '#B09987'
       },
       screens: {
         sm: '32em',
@@ -49,6 +54,7 @@ module.exports = {
         screen: 'var(--screen-height, 100vh)',
         'wide-sticky': '112px',
         'narrow-sticky': '65px',
+        '2px': '2px',
       },
       height: {
         screen: 'var(--screen-height, 100vh)',
@@ -75,7 +81,11 @@ module.exports = {
         10: '10px',
         14: '14px',
         8: '8px',
+        50: '50px',
+        28: '28px',
         subheading: 'calc(1.325rem + .9vw)',
+        cusheading: 'calc(1.375rem + 1.5vw)',
+        cusSubheading: 'calc(1.3rem + .6vw)',
         text: '1.1rem',
         '8xl': ['68px', '50px'],
         'x-large': '180px',

@@ -48,7 +48,7 @@ export function MobileNav() {
       }
     >
       {mobileNavList.map((navItem, index) => (
-        <Menu.Item>
+        <Menu.Item key={index}>
           <Disclosure>
             {({open}) => (
               <>

@@ -8,12 +8,15 @@ import type {
 import {
   flattenConnection,
   AnalyticsPageType,
+  Image,
   type SeoHandleFunction,
 } from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section, Text, SortFilter} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import { CollectionHeading } from '~/components/CollectionHeading';
+import { CollectionDetails } from '~/components/CollectionDetails';
 
 const seo: SeoHandleFunction<typeof loader> = ({data}) => ({
   title: data?.collection?.seo?.title,
@@ -159,33 +162,10 @@ export default function Collection() {
     useLoaderData<typeof loader>();
 
   return (
-    <>
-      <PageHeader heading={collection.title}>
-        {collection?.description && (
-          <div className="flex items-baseline justify-between w-full">
-            <div>
-              <Text format width="narrow" as="p" className="inline-block">
-                {collection.description}
-              </Text>
-            </div>
-          </div>
-        )}
-      </PageHeader>
-      <Section>
-        <SortFilter
-          filters={collection.products.filters as Filter[]}
-          appliedFilters={appliedFilters}
-          collections={collections as CollectionType[]}
-        >
-          <ProductGrid
-            key={collection.id}
-            collection={collection as CollectionType}
-            url={`/collections/${collection.handle}`}
-            data-test="product-grid"
-          />
-        </SortFilter>
-      </Section>
-    </>
+    <div className='px-3 sm:container py-16 md:py-24 lg:py-28'>
+      <CollectionHeading heading={collection.title} />
+      <CollectionDetails collection={collection as CollectionType} />
+    </div>
   );
 }
 
