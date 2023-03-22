@@ -12,7 +12,7 @@ import {
   AnalyticsPageType,
   Money,
   ShopifyAnalyticsProduct,
-  ShopPayButton,
+  //ShopPayButton,
   flattenConnection,
   type SeoHandleFunction,
   type SeoConfig,
@@ -30,6 +30,8 @@ import {
   Link,
   AddToCartButton,
 } from '~/components';
+import { ProductContent } from '~/components/ProductContent';
+import { WorldMap } from '~/components/worldmap';
 import {getExcerpt} from '~/lib/utils';
 import invariant from 'tiny-invariant';
 import clsx from 'clsx';
@@ -171,6 +173,9 @@ export default function Product() {
           </div>
         </div>
       </Section>
+      <Section className="lg:px-0">
+        <ProductContent />
+      </Section>
       <Suspense fallback={<Skeleton className="h-32" />}>
         <Await
           errorElement="There was a problem loading related products"
@@ -181,6 +186,7 @@ export default function Product() {
           )}
         </Await>
       </Suspense>
+      <WorldMap />
     </>
   );
 }
@@ -287,9 +293,11 @@ export function ProductForm() {
                 </Text>
               )}
             </AddToCartButton>
+            {/*
             {!isOutOfStock && (
               <ShopPayButton variantIds={[selectedVariant?.id!]} />
             )}
+            */}
           </div>
         )}
       </div>

@@ -17,6 +17,8 @@ import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import { CollectionHeading } from '~/components/CollectionHeading';
 import { CollectionDetails } from '~/components/CollectionDetails';
+import { CollectionLinks } from '~/components/CollectionLinks';
+import { TestMattressWidget } from '~/components/TestMattressWidget';
 
 const seo: SeoHandleFunction<typeof loader> = ({data}) => ({
   title: data?.collection?.seo?.title,
@@ -162,9 +164,17 @@ export default function Collection() {
     useLoaderData<typeof loader>();
 
   return (
-    <div className='px-3 sm:container py-16 md:py-24 lg:py-28'>
-      <CollectionHeading heading={collection.title} />
-      <CollectionDetails collection={collection as CollectionType} />
+    <div>
+      <div className='px-3 sm:container py-16 md:py-24 lg:py-28'>
+        <CollectionHeading heading={collection.title} />
+        <CollectionDetails collection={collection as CollectionType} />
+      </div>
+      <div>
+        <CollectionLinks />
+      </div>
+      <div>
+        <TestMattressWidget />
+      </div>
     </div>
   );
 }
